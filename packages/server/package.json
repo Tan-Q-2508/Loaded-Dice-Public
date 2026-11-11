@@ -1,0 +1,38 @@
+{
+  "name": "@shaatir-shakuni/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "@shaatir-shakuni/auth": "*",
+    "@shaatir-shakuni/db": "*",
+    "@shaatir-shakuni/engine": "*",
+    "@shaatir-shakuni/lobby": "*",
+    "@shaatir-shakuni/reconnect": "*",
+    "@shaatir-shakuni/socket-api": "*",
+    "drizzle-orm": "^0.39.3",
+    "express": "^4.21.2",
+    "postgres": "^3.4.5",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.13.10",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

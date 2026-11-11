@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --bg-0: #0f0c0a;
+  --bg-1: #171310;
+  --table-wood: #2a1f18;
+  --table-ring: rgba(196, 146, 46, 0.28);
+  --accent: #c4922e;
+  --accent-soft: rgba(196, 146, 46, 0.18);
+  --text: #f2ebe3;
+  --muted: #c9b79e;
+  --danger: #9e3a2c;
+  --dharma: #c4922e;
+  --adharma: #9e3a2c;
+  --parchment: #e8d4b0;
+  --dock-h: 11.5rem;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+html,
+body {
+  min-height: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+#root {
+  min-height: 100%;
+  max-width: 100%;
+}
+
+/* Companion / fallback immersive mode. Used when the Fullscreen API is
+   missing, and kept on when a mobile browser drops native fullscreen for
+   the virtual keyboard so the app layout stays locked. */
+html.app-immersive,
+html.app-immersive body {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+html.app-immersive #root {
+  height: 100dvh;
+  overflow: auto;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font-family: Figtree, system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -15%, rgba(196, 146, 46, 0.14), transparent 58%),
+    radial-gradient(ellipse 50% 40% at 0% 100%, rgba(139, 58, 42, 0.16), transparent 55%),
+    radial-gradient(ellipse 45% 35% at 100% 80%, rgba(74, 61, 48, 0.35), transparent 50%),
+    linear-gradient(165deg, var(--bg-0) 0%, var(--bg-1) 42%, #1c1510 100%);
+  background-attachment: fixed;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tileLand {
+  from {
+    transform: translateY(-14px) scale(0.9);
+    opacity: 0.35;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes voteFlip {
+  from {
+    transform: rotateX(70deg);
+    opacity: 0.2;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes bannerIn {
+  from {
+    opacity: 0.2;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.court-table {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 45%, rgba(196, 146, 46, 0.08), transparent 70%),
+    radial-gradient(circle at 50% 50%, #3a2a20 0%, var(--table-wood) 55%, #1a1410 100%);
+  box-shadow: var(--shadow-table, inset 0 1px 0 rgba(226, 192, 120, 0.08), 0 24px 48px rgba(0, 0, 0, 0.45));
+  border: 1px solid rgba(196, 146, 46, 0.22);
+}
+
+.decree-tile {
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.08), transparent 45%),
+    linear-gradient(180deg, #3a2e24, #241c16);
+  border: 1px solid rgba(226, 192, 120, 0.28);
+}
+
+.decree-tile-dharma {
+  background:
+    linear-gradient(160deg, rgba(212, 168, 75, 0.35), transparent 50%),
+    linear-gradient(180deg, #5a4520, #2a2110);
+  border-color: rgba(212, 168, 75, 0.55);
+  color: #f2ebe3;
+}
+
+.decree-tile-adharma {
+  background:
+    linear-gradient(160deg, rgba(158, 58, 44, 0.4), transparent 50%),
+    linear-gradient(180deg, #5a2820, #2a1410);
+  border-color: rgba(158, 58, 44, 0.55);
+  color: #f2ebe3;
+}
+
+.seat-exiled {
+  filter: grayscale(0.85) brightness(0.7);
+  opacity: 0.55;
+}
+
+.seat-exiled::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 46%,
+    rgba(138, 128, 116, 0.85) 48%,
+    rgba(138, 128, 116, 0.85) 52%,
+    transparent 54%
+  );
+  pointer-events: none;
+}
+
+input[type='text'],
+input[type='checkbox'] {
+  accent-color: var(--accent);
+}

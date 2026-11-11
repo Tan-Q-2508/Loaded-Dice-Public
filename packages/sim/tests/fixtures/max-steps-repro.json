@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "seed": 4242,
+  "playerCount": 5,
+  "rebalanceEnabled": false,
+  "playerIds": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+  ],
+  "policyByPlayer": {
+    "p1": "random",
+    "p2": "random",
+    "p3": "random",
+    "p4": "random",
+    "p5": "random"
+  },
+  "actions": [
+    {
+      "type": "START_GAME",
+      "playerIds": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "displayNames": {
+        "p1": "p1",
+        "p2": "p2",
+        "p3": "p3",
+        "p4": "p4",
+        "p5": "p5"
+      },
+      "hostPlayerId": "p1",
+      "rebalanceEnabled": false,
+      "seed": 4242
+    },
+    {
+      "type": "ACK_ROLE_REVEAL",
+      "playerId": "p1"
+    },
+    {
+      "type": "ACK_ROLE_REVEAL",
+      "playerId": "p2"
+    },
+    {
+      "type": "ACK_ROLE_REVEAL",
+      "playerId": "p3"
+    }
+  ],
+  "failure": {
+    "kind": "max_steps",
+    "message": "Exceeded maxSteps=3",
+    "step": 3
+  }
+}

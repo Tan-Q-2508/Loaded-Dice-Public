@@ -1,0 +1,24 @@
+{
+  "name": "shaatir-shakuni",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspaces --if-present",
+    "build": "npm run build --workspace=@shaatir-shakuni/engine && npm run build --workspace=@shaatir-shakuni/socket-api && npm run build --workspace=@shaatir-shakuni/auth && npm run build --workspace=@shaatir-shakuni/db && npm run build --workspace=@shaatir-shakuni/lobby && npm run build --workspace=@shaatir-shakuni/reconnect && npm run build --workspace=@shaatir-shakuni/server && npm run build --workspace=@shaatir-shakuni/sim && npm run build --workspace=@shaatir-shakuni/bot && npm run build --workspace=@shaatir-shakuni/web",
+    "migrate": "npm run migrate --workspace=@shaatir-shakuni/db",
+    "sim": "npm run sim --workspace=@shaatir-shakuni/sim",
+    "sim:deep": "npm run sim:deep --workspace=@shaatir-shakuni/sim",
+    "start:server": "npm run start --workspace=@shaatir-shakuni/server",
+    "dev:web": "npm run dev --workspace=@shaatir-shakuni/web",
+    "bot:watch": "npm run bot --workspace=@shaatir-shakuni/bot -- --mode watch",
+    "bot:loop": "npm run bot --workspace=@shaatir-shakuni/bot -- --mode loop",
+    "bot:remote": "npm run bot --workspace=@shaatir-shakuni/bot -- --mode remote",
+    "bot:watch-ui": "npm run watch-ui --workspace=@shaatir-shakuni/bot --",
+    "qa:stress": "npm run qa:stress --workspace=@shaatir-shakuni/bot --",
+    "qa:engine": "npm run qa:engine --workspace=@shaatir-shakuni/bot --",
+    "qa:socket": "npm run qa:socket --workspace=@shaatir-shakuni/bot --",
+    "qa:browser": "npm run qa:browser --workspace=@shaatir-shakuni/bot --"
+  }
+}

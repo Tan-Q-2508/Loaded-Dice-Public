@@ -1,0 +1,40 @@
+{
+  "name": "@shaatir-shakuni/bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "bot": "tsx src/cli.ts",
+    "qa:stress": "tsx src/qa/qa-cli.ts",
+    "qa:engine": "tsx src/qa/qa-cli.ts --engine-only",
+    "qa:socket": "tsx src/qa/qa-cli.ts --socket-only",
+    "qa:browser": "tsx src/qa/browser-cli.ts",
+    "watch-ui": "tsx scripts/watch-ui-bots.ts"
+  },
+  "dependencies": {
+    "@shaatir-shakuni/engine": "*",
+    "@shaatir-shakuni/reconnect": "*",
+    "@shaatir-shakuni/server": "*",
+    "@shaatir-shakuni/sim": "*",
+    "@shaatir-shakuni/socket-api": "*",
+    "playwright": "^1.54.2",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

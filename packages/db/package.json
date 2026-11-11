@@ -1,0 +1,35 @@
+{
+  "name": "@shaatir-shakuni/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schema/index.d.ts",
+      "import": "./dist/schema/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate": "tsc && drizzle-kit generate --name init",
+    "migrate": "node ./scripts/migrate.mjs"
+  },
+  "dependencies": {
+    "@shaatir-shakuni/engine": "*",
+    "drizzle-orm": "^0.39.3",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.6",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}

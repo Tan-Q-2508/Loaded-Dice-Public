@@ -1,0 +1,31 @@
+{
+  "installCommand": "npm install",
+  "buildCommand": "npm run build --workspace=@shaatir-shakuni/engine && npm run build --workspace=@shaatir-shakuni/socket-api && npm run build --workspace=@shaatir-shakuni/web",
+  "outputDirectory": "packages/web/dist",
+  "rewrites": [
+    {
+      "source": "/((?!assets/|art/|icons/|sw\\.js$|manifest\\.webmanifest$).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/game(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/role(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" }
+      ]
+    }
+  ]
+}
