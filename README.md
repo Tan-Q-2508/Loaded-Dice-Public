@@ -1,5 +1,7 @@
 # Loaded Dice
 
+**Live demo: https://loaded-dice-web.vercel.app/**
+
 A realtime multiplayer social-deduction game for 5–10 players, themed around the Mahabharata:
 Pandavas vs. Kauravas, with Duryodhana as the hidden traitor and Shakuni's rigged dice as the
 central metaphor. It is a mechanical reskin of the party game *Secret Hitler* (by Mike Boxleiter,
