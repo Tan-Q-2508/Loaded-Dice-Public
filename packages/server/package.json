@@ -25,7 +25,7 @@
     "@shaatir-shakuni/reconnect": "*",
     "@shaatir-shakuni/socket-api": "*",
     "drizzle-orm": "^0.39.3",
-    "express": "^4.21.2",
+    "express": "^4.22.3",
     "postgres": "^3.4.5",
     "socket.io": "^4.8.1"
   },
