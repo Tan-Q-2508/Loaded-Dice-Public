@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@shaatir-shakuni/engine": "*",
-    "zod": "^3.24.2"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
